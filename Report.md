@@ -817,7 +817,7 @@ def get_forces(net_list, gate_list, pad_list):
 
 However, there's a mistake in this modeling, because the stability convergence is not come true. This [gif](https://imgur.com/93MqdOK)  is the simulation result of above modeling. The name of this benchmark is `struct`.
 
-![Animation](https://imgur.com/93MqdOK)
+![Animation](https://imgur.com/93MqdOK.gif)
 
 Due to above situation, this project add the *Friction* in the force. The friction should proportional to the velocity of particle.
 
@@ -833,7 +833,7 @@ def get_forces(net_list, gate_list, pad_list):
 
 Now, the convergence of the simulation can be occured like [this](https://imgur.com/a/SdUuGkM).
 
-![Animation2](https://imgur.com/a/SdUuGkM)
+![Animation2](https://imgur.com/a/SdUuGkM.gif)
 
 
 
@@ -855,7 +855,7 @@ SA takes a lot of running times, but the implementation is simple and it doesn't
 
 
 
-![Animation](Report.assets/MQdfymq)
+![Animation](Report.assets/MQdfymq.gif)
 
 ### 3.2 Quadratic Placement
 
