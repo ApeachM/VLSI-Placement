@@ -1,5 +1,7 @@
 # Global Placement of VLSI Physical Design
 
+[TOC]
+
 This document refers to a book theoughoutly, which name is *VLSI Physical Design: From Graph Partitioning to Timing Closure*. [1]
 
 ## 1. Introduction
@@ -483,7 +485,7 @@ def random_iterative_improvement_place():
 
 If the cost-solution graph has only one local minimum, then the above will work. However, generally it will not. The below figure indicates well the general situation of cost-solution function.
 
-![image-20211202225815489](Report.assets/image-20211202225815489.png)
+![image-20211202225815489](https://tva1.sinaimg.cn/large/008i3skNgy1gx0sv2tnn3j31cc0fcwjr.jpg)
 
 If we use only above code, the solution will be stagnant at the non-optimal solution. Therefore, we need tolerance for this. Now, we should consider how we can deal this tolerance. The solution of this can be found from SA algorithm. In SA algorithm, we accept the situations that require tolerance (when delta HPWL is positive) using the probability. The probability for accepting is determined by `Temperature`. If `Temperature` is hight, we accept the positive HPWL changes, and if `Temperature` is low, we hardly accept the positive HPWL. The below figure explains this well. 
 
@@ -817,7 +819,7 @@ def get_forces(net_list, gate_list, pad_list):
 
 However, there's a mistake in this modeling, because the stability convergence is not come true. This [gif](https://imgur.com/93MqdOK)  is the simulation result of above modeling. The name of this benchmark is `struct`.
 
-![Animation](https://imgur.com/93MqdOK.gif)
+[Animation](https://imgur.com/93MqdOK)
 
 Due to above situation, this project add the *Friction* in the force. The friction should proportional to the velocity of particle.
 
@@ -833,13 +835,13 @@ def get_forces(net_list, gate_list, pad_list):
 
 Now, the convergence of the simulation can be occured like [this](https://imgur.com/a/SdUuGkM).
 
-![Animation2](https://imgur.com/a/SdUuGkM.gif)
+[Animation2](https://imgur.com/a/SdUuGkM)
 
 
 
 | Initial state                                                | Final state                                                  |
 | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| ![initial](Report.assets/008i3skNgy1gx0o61gwcbj30rs0rs1ae.jpg) | ![0999](https://tva1.sinaimg.cn/large/008i3skNgy1gx0o6j9kzpj30rs0rstnq.jpg) |
+| ![initial](https://tva1.sinaimg.cn/large/008i3skNgy1gx0spl1rsdj30rs0rsar7.jpg) | ![0999](https://tva1.sinaimg.cn/large/008i3skNgy1gx0o6j9kzpj30rs0rstnq.jpg) |
 
 ## 3. Conclusion
 
@@ -847,15 +849,15 @@ Now, the convergence of the simulation can be occured like [this](https://imgur.
 
 SA takes a lot of running times, but the implementation is simple and it doesn't occur the overlap position, which menas the detail placement is not required respectively.
 
-|        | Initial Placement                 | Final Placement                   | Initial HPWL | Final HPWL |
-| ------ | --------------------------------- | --------------------------------- | ------------ | ---------- |
-| struct | ![00001](Report.assets/00001.png) | ![29675](Report.assets/29675.png) | 170566       | 82640      |
+|        | Initial Placement                                            | Final Placement                                              | Initial HPWL | Final HPWL |
+| ------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------ | ---------- |
+| struct | ![00001](https://tva1.sinaimg.cn/large/008i3skNgy1gx0su764mmj30rs0rs4qp.jpg) | ![29675](https://tva1.sinaimg.cn/large/008i3skNgy1gx0sueaypnj30rs0rsb29.jpg) | 170566       | 82640      |
 
-![HPWL](Report.assets/HPWL-8521177.png)
+![HPWL](https://tva1.sinaimg.cn/large/008i3skNgy1gx0stpw2fxj30zk0qoq4j.jpg)
 
 
 
-![Animation](Report.assets/MQdfymq.gif)
+[Animation](Report.assets/Animation-8524254.gif)
 
 ### 3.2 Quadratic Placement
 
@@ -891,11 +893,11 @@ This Placement had a very short running time similar to 3.3.1, but Detail Placem
 
 |        | visualization                                                | initial HPWL (randomized placement) | final HPWL         | delta HPWL         |
 | ------ | ------------------------------------------------------------ | ----------------------------------- | ------------------ | ------------------ |
-| struct | <img src="Report.assets/struct.png" alt="struct" style="zoom:33%;" /> | 170423.39999999994                  | 10475.303983154754 | 159948.09601684517 |
+| struct | <img src="https://tva1.sinaimg.cn/large/008i3skNgy1gx0sncsybtj30rs0rsgwi.jpg" alt="struct" style="zoom:33%;" /> | 170423.39999999994                  | 10475.303983154754 | 159948.09601684517 |
 
 |        | visualization                                                | initial HPWL (randomized placement) | final HPWL         | delta HPWL       |
 | ------ | ------------------------------------------------------------ | ----------------------------------- | ------------------ | ---------------- |
-| biomed | <img src="Report.assets/biomed.png" alt="biomed" style="zoom:33%;" /> | 477026.8999999998                   | 17380.689419776783 | 459646.210580223 |
+| biomed | <img src="https://tva1.sinaimg.cn/large/008i3skNgy1gx0snnunadj30rs0rstlu.jpg" alt="biomed" style="zoom:33%;" /> | 477026.8999999998                   | 17380.689419776783 | 459646.210580223 |
 
 
 
@@ -907,9 +909,9 @@ The trial benchmark will only be `struct`.
 
 #### 3.3.1 Original Placement
 
-|        | Initial placement                             | Final placement                       | Initial HPWL | Final HPWL | Delta HPWL |
-| ------ | --------------------------------------------- | ------------------------------------- | ------------ | ---------- | ---------- |
-| struct | ![initial](Report.assets/initial-8519168.png) | ![initial](Report.assets/initial.png) | 173943       | 60709      | 113234     |
+|        | Initial placement                                            | Final placement                                              | Initial HPWL | Final HPWL | Delta HPWL |
+| ------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------ | ---------- | ---------- |
+| struct | ![initial](https://tva1.sinaimg.cn/large/008i3skNgy1gx0srqkb7dj30rs0rs4qp.jpg) | ![initial](https://tva1.sinaimg.cn/large/008i3skNgy1gx0ss192d5j30rs0rsqju.jpg) | 173943       | 60709      | 113234     |
 
 
 
@@ -917,24 +919,33 @@ The trial benchmark will only be `struct`.
 
 
 
-|        | Initial placement                             | Final placement                   | Initial HPWL | Final HPWL | Delta HPWL |
-| ------ | --------------------------------------------- | --------------------------------- | ------------ | ---------- | ---------- |
-| struct | ![initial](Report.assets/initial-8519389.png) | ![final](Report.assets/final.png) | 168735       | 17551      | 156392     |
+|        | Initial placement                                            | Final placement                                              | Initial HPWL | Final HPWL | Delta HPWL |
+| ------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------ | ---------- | ---------- |
+| struct | ![initial](https://tva1.sinaimg.cn/large/008i3skNgy1gx0ssgu96xj30rs0rs4qp.jpg) | ![](https://tva1.sinaimg.cn/large/008i3skNgy1gx0ssqrzn7j30rs0rs7hp.jpg) | 168735       | 17551      | 156392     |
 
 #### 3.3.3 Comparision
 
-|        | Original Algorithm                    | Suggestion Algorithm              | HPWL(Original Algorithm) | HPWL(Suggestion Algorithm) |
-| ------ | ------------------------------------- | --------------------------------- | ------------------------ | -------------------------- |
-| struct | ![initial](Report.assets/initial.png) | ![final](Report.assets/final.png) | 60709                    | 17551                      |
+|        | Original Algorithm                                           | Suggestion Algorithm                                         | HPWL(Original Algorithm) | HPWL(Suggestion Algorithm) |
+| ------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------ | -------------------------- |
+| struct | ![initial](https://tva1.sinaimg.cn/large/008i3skNgy1gx0suplj5lj30rs0rsqju.jpg) | ![final](https://tva1.sinaimg.cn/large/008i3skNgy1gx0suukgmrj30rs0rs7hp.jpg) | 60709                    | 17551                      |
 
 As mentioned above, the existing algorithm calculates the ZFT only once at an initial random position, so it ends in a state where the force balance of all cells is not properly achieved. However, in the presented method, it can be seen that the proposed algorithm with the value of HPWL is much better because it ends after the force balance of all cells is achieved.
 
 In the presented algorithm, it can be seen that each cell is a little farther away from each other because the repulsive force is applied so that the overlap does not occur even if all cells are balanced. This repulsive force can be adjusted by adjusting the coefficient of restitution to achieve the desired spacing between cells.
 
-### 3.3.4 Summary
+### 3.3.4 Discussion
 
 SA does not require detail placement, but has a running time of 100 to 10000 times more than other placements, and requires a lot of computer resources. The Final Objective function value is also inconsistent compared to other methods.
 
 Quadratic placement has a very fast speed than Forced-directed placement, but there was quite a high cell density and a lot of overlap, and it is expected to have a Final Objective function value similar to SA after detail placement.
 
 Forced Directed placement has a complexity of O(n^2), so it is a little slower than Quadratic placement, but it is significantly faster than SA and has a decent Final Objective function value.
+
+
+
+## 4. Reference
+
+[1] Kahng, A. B., Lienig, J., Markov, I. L., & Hu, J. (2011). *VLSI physical design: from graph partitioning to timing closure*. Springer Science & Business Media.
+
+[2] *VLSI CAD Part II: Layout*. Coursera. (n.d.). Retrieved December 3, 2021, from https://www.coursera.org/learn/vlsi-cad-layout. 
+
